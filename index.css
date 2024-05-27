@@ -1,0 +1,554 @@
+/* **************************** Global Styles **************************** */
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  margin: 0px 10px;
+}
+
+/* **************************** Header and Nav Bar **************************** */
+
+/* ************* Nav Bar *********** */
+
+nav ul {
+  display: flex;
+  gap: 10px;
+  list-style-type: none;
+  position: relative;
+  top: -150px;
+}
+
+nav ul select {
+  height: 30px;
+  width: 100px;
+  font-size: 10px;
+  border: 2px solid #fff7ed;
+  border-radius: 5px;
+  background-color: inherit;
+  color: #fff7ed;
+  padding: 0px 5px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul select:focus {
+  outline: none;
+}
+
+nav ul li a {
+  height: 30px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fff7ed;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff7ed;
+  font-size: 10px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover,
+nav ul select:hover {
+  color: #f97316;
+  background-color: #fff7ed;
+  transform: translateY(-5px);
+}
+
+/* ************* Header text *********** */
+
+header {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #fff7ed;
+  background-image: linear-gradient(
+      rgba(249, 115, 22, 0.8),
+      rgba(234, 88, 12, 0.8)
+    ),
+    url("./images/headerImage.jpeg");
+  background-size: cover;
+  position: relative;
+}
+
+header p {
+  text-align: center;
+  margin: 0 20px;
+  font-size: small;
+}
+
+header h1 {
+  letter-spacing: 0px;
+  font-size: 20px;
+  font-weight: 400;
+  transition: all 0.3s ease-in-out;
+}
+
+/* **************************** Blog Section **************************** */
+
+main {
+  background-color: #ffedd5;
+  padding: 20px 0px;
+}
+
+/* *************  Main Heading class *********** */
+
+.main-heading {
+  text-align: center;
+  font-size: 20px;
+  background: linear-gradient(to right, #fdba74, #fb923c, #ea580c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+.main-heading:hover {
+  transform: scale(1.1);
+}
+
+/* *************  Blog element Section *********** */
+
+#blog-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+.blog-element {
+  width: 95%;
+  height: 100%;
+  background-color: #fff7ed;
+  border-radius: 5px;
+  padding: 20px 20px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  justify-self: center;
+  align-self: center;
+  transition: all 0.3s ease-in-out;
+}
+.blog-element:hover {
+  box-shadow: 0 8px 16px -1px rgb(0 0 0 / 0.2), 0 4px 8px -2px rgb(0 0 0 / 0.2); /* Increase shadow spread */
+  transform: scale(1.05);
+}
+
+/* *************  Blog Image style *********** */
+
+.block-image-container {
+  position: relative;
+}
+
+.block-image-container img {
+  width: 100%;
+  height: 70%;
+  background-size: cover;
+}
+
+.block-image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.blog-element:hover .block-image-container::after {
+  opacity: 1;
+}
+
+.image-title-summary-container {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #fff7ed;
+  z-index: 3;
+}
+
+.image-title-summary-container ul {
+  list-style-type: none;
+  font-size: xx-small;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.blog-element:hover .image-title-summary-container ul {
+  opacity: 1;
+  z-index: 2;
+}
+
+.image-title-summary-container h3 {
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+
+.blog-element article {
+  margin-top: 30px;
+}
+
+/* **************************** About Section **************************** */
+
+#about {
+  background: linear-gradient(to right, #fb923c, #f97316);
+  padding: 40px 20px;
+  color: #fff7ed;
+  text-align: justify;
+}
+
+/* ************* About Heading *********** */
+
+#about h1 {
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+#about h1:hover {
+  transform: scale(1.1);
+}
+
+#about h3 {
+  margin: 20px 0px;
+}
+
+#about p {
+  margin: 10px 0px;
+}
+
+.imp-text {
+  color: #c2410c;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.imp-text__2 {
+  color: #c2410c;
+  font-weight: 700;
+}
+
+.about-footer {
+  text-align: center;
+  padding-top: 40px;
+  color: #fdba74;
+  font-style: italic;
+}
+
+/* **************************** Contact Us Section **************************** */
+
+#contact {
+  background-color: #ffedd5;
+  padding: 20px;
+}
+
+/* *************  Contact us form *********** */
+
+.form-container {
+  background-color: yellow;
+  background-image: url(./images/enchanting-anime-landscape-mistcovered-mountain-600nw-2301778699.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 550px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-div-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 0px 0px 10px;
+  padding: 20px;
+}
+
+input,
+textarea {
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+input:hover,
+textarea:hover {
+  transform: translateY(-5px);
+}
+
+input:focus,
+textarea:focus {
+  transform: translateY(-5px);
+}
+
+.contact-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form label {
+  color: #ea580c;
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: none;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  padding: 7px;
+  border-radius: 4px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-bottom: 2px solid #f97316;
+}
+
+/* *************  form button *********** */
+
+.contact-form input[type="submit"] {
+  background-color: #f97316;
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: #fff7ed;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: #ea580c;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.input-label-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* *************  Social media Icon *********** */
+
+.social-media-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.social-media-container i {
+  color: #ea580c;
+  cursor: pointer;
+}
+
+/* **************************** Footer **************************** */
+
+footer {
+  background-color: #475569;
+  padding: 20px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 20px;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-section-list {
+  display: flex;
+  gap: 40px;
+  border-top: 2px solid #e2e8f0;
+  color: #e2e8f0;
+}
+
+small {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  color: #94a3b8;
+}
+
+.footer-section-item {
+  margin-top: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* **************************** Media Queries **************************** */
+
+/******************** 640px *************/
+
+@media (min-width: 640px) {
+  body {
+    margin: 0px 40px;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    position: absolute;
+    top: 40px;
+    right: 60px;
+  }
+
+  header h1 {
+    letter-spacing: 2px;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  header p {
+    text-align: center;
+    margin: 0 100px;
+  }
+
+  nav ul li a,
+  nav ul select {
+    height: 40px;
+    width: 100px;
+    font-size: medium;
+  }
+
+  nav ul select {
+    height: 40px;
+    width: 150px;
+    font-size: medium;
+  }
+
+  #contact {
+    padding: 60px;
+  }
+
+  .form-div-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 70%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+    padding: 20px;
+  }
+
+  footer {
+    padding: 0;
+  }
+
+  .footer-section {
+    flex-direction: row;
+  }
+}
+
+/******************** 768px *************/
+
+@media (min-width: 768px) {
+  .main-heading {
+    font-size: 30px;
+  }
+
+  body {
+    margin: 0px 80px;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 40px;
+    list-style-type: none;
+    position: absolute;
+    top: 40px;
+    right: 60px;
+  }
+
+  #blog-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .blog-element {
+    width: 95%;
+    height: 100%;
+  }
+
+  .image-title-summary-container ul {
+    font-size: xx-small;
+  }
+
+  #about {
+    padding: 40px 60px;
+  }
+
+  #about h1 {
+    font-size: 30px;
+  }
+
+  #about h3 {
+    font-size: 20px;
+  }
+}
+
+/******************** 1024px *************/
+
+@media (min-width: 1024px) {
+  header h1 {
+    letter-spacing: 4px;
+    font-size: 40px;
+    font-weight: 600;
+  }
+  header h1:hover {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+  }
+
+  header p {
+    text-align: center;
+    margin: 0 100px;
+    font-size: medium;
+  }
+
+  .blog-element {
+    width: 80%;
+    height: 100%;
+  }
+
+  .image-title-summary-container ul {
+    font-size: small;
+  }
+
+  #about {
+    padding: 40px 120px;
+  }
+
+  #about h1 {
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+
+  .form-div-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 50%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+    padding: 30px;
+  }
+}
